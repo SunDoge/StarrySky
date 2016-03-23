@@ -28,8 +28,8 @@ function Star()
 	this.x = parseInt(WINDOW_WIDTH * Math.random());
 	this.y = parseInt(WINDOW_HEIGHT * Math.random());
 	this.size = 1+2*Math.random()*(window.devicePixelRatio || 1);
-	this.vx = 0.5;
-	this.vy = 0.5;	
+	this.vx = 1;
+	this.vy = 1;	
 }
 
 function distance(star1, star2)
@@ -56,11 +56,11 @@ function line(cxt, star1, star2)
 
 function render(cxt)
 {
-	//cxt.clearRect(0,0,WINDOW_WIDTH, WINDOW_HEIGHT);
+	cxt.clearRect(0,0,WINDOW_WIDTH, WINDOW_HEIGHT);
 
-	cxt.globalCompositeOperation = "source-over";
-    cxt.fillStyle = "black";
-    cxt.fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+	//cxt.globalCompositeOperation = "source-over";
+    //cxt.fillStyle = "black";
+    //cxt.fillRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
     //cxt.globalCompositeOperation = "lighter";
 	for(var i = 0; i < STAR_COUNT; i++){
 		cxt.fillStyle = stars[i].color;
